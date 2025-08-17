@@ -8,9 +8,19 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   Dog,
   PawPrint,
@@ -63,7 +73,10 @@ export default function RegisterPage() {
                 <Label>Nombres</Label>
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <Input placeholder="Ej: Carlos" className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500" />
+                  <Input
+                    placeholder="Ej: Carlos"
+                    className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500"
+                  />
                 </div>
               </div>
 
@@ -72,7 +85,10 @@ export default function RegisterPage() {
                 <Label>Apellidos</Label>
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <Input placeholder="Ej: Ramírez" className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500" />
+                  <Input
+                    placeholder="Ej: Ramírez"
+                    className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500"
+                  />
                 </div>
               </div>
 
@@ -81,7 +97,10 @@ export default function RegisterPage() {
                 <Label>Nombre de usuario</Label>
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <Input placeholder="Ej: carlos123" className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500" />
+                  <Input
+                    placeholder="Ej: carlos123"
+                    className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500"
+                  />
                 </div>
               </div>
 
@@ -90,7 +109,11 @@ export default function RegisterPage() {
                 <Label>Email</Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <Input type="email" placeholder="tu@email.com" className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500" />
+                  <Input
+                    type="email"
+                    placeholder="tu@email.com"
+                    className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500"
+                  />
                 </div>
               </div>
 
@@ -99,7 +122,11 @@ export default function RegisterPage() {
                 <Label>Teléfono</Label>
                 <div className="relative">
                   <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <Input type="tel" placeholder="+51 999 123 456" className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500" />
+                  <Input
+                    type="tel"
+                    placeholder="+51 999 123 456"
+                    className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500"
+                  />
                 </div>
               </div>
 
@@ -108,7 +135,10 @@ export default function RegisterPage() {
                 <Label>Dirección (opcional)</Label>
                 <div className="relative">
                   <Home className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <Input placeholder="Tu dirección completa" className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500" />
+                  <Input
+                    placeholder="Tu dirección completa"
+                    className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500"
+                  />
                 </div>
               </div>
 
@@ -145,12 +175,17 @@ export default function RegisterPage() {
               <div className="space-y-1">
                 <Label>Género (opcional)</Label>
                 <Select onValueChange={setGender} value={gender}>
-                  <SelectTrigger className="h-11 text-sm w-full">
-                    <SelectValue placeholder="Seleccionar género" />
+                  <SelectTrigger className="h-11 w-full text-sm min-h-[44px]">
+                    <SelectValue
+                      className="h-11 flex items-center"
+                      placeholder="Seleccionar género"
+                    />
                   </SelectTrigger>
                   <SelectContent>
                     {["Masculino", "Femenino", "Otro"].map((g) => (
-                      <SelectItem key={g} value={g}>{g}</SelectItem>
+                      <SelectItem key={g} value={g}>
+                        {g}
+                      </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -160,14 +195,21 @@ export default function RegisterPage() {
               <div className="space-y-1">
                 <Label>Tipo de documento</Label>
                 <Select onValueChange={setDocType} value={docType}>
-                  <SelectTrigger className="h-11 text-sm w-full pl-10 relative">
+                  <SelectTrigger className="h-11 w-full text-sm relative pl-10 min-h-[44px]">
                     <FileText className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <SelectValue placeholder="Seleccionar tipo de documento" />
+                    <SelectValue
+                      className="h-11 flex items-center pl-0"
+                      placeholder="Seleccionar tipo de documento"
+                    />
                   </SelectTrigger>
                   <SelectContent>
-                    {["DNI", "Pasaporte", "Carné de extranjería"].map((type) => (
-                      <SelectItem key={type} value={type}>{type}</SelectItem>
-                    ))}
+                    {["DNI", "Pasaporte", "Carné de extranjería"].map(
+                      (type) => (
+                        <SelectItem key={type} value={type}>
+                          {type}
+                        </SelectItem>
+                      )
+                    )}
                   </SelectContent>
                 </Select>
               </div>
@@ -177,7 +219,10 @@ export default function RegisterPage() {
                 <Label>Número de documento</Label>
                 <div className="relative">
                   <FileText className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <Input placeholder="Número de documento" className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500" />
+                  <Input
+                    placeholder="Número de documento"
+                    className="pl-10 h-11 text-sm border-gray-300 focus-visible:ring-sky-500"
+                  />
                 </div>
               </div>
 
@@ -186,9 +231,21 @@ export default function RegisterPage() {
                 <Label>Contraseña</Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <Input type={showPassword ? "text" : "password"} placeholder="Mínimo 8 caracteres" className="pl-10 pr-12 h-11 text-sm border-gray-300 focus-visible:ring-sky-500" />
-                  <button type="button" onClick={() => setShowPassword((v) => !v)} className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-500 hover:text-gray-700">
-                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  <Input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Mínimo 8 caracteres"
+                    className="pl-10 pr-12 h-11 text-sm border-gray-300 focus-visible:ring-sky-500"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword((v) => !v)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-500 hover:text-gray-700"
+                  >
+                    {showPassword ? (
+                      <EyeOff className="w-5 h-5" />
+                    ) : (
+                      <Eye className="w-5 h-5" />
+                    )}
                   </button>
                 </div>
               </div>
@@ -198,9 +255,21 @@ export default function RegisterPage() {
                 <Label>Confirmar contraseña</Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <Input type={showConfirmPassword ? "text" : "password"} placeholder="Repite tu contraseña" className="pl-10 pr-12 h-11 text-sm border-gray-300 focus-visible:ring-sky-500" />
-                  <button type="button" onClick={() => setShowConfirmPassword((v) => !v)} className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-500 hover:text-gray-700">
-                    {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  <Input
+                    type={showConfirmPassword ? "text" : "password"}
+                    placeholder="Repite tu contraseña"
+                    className="pl-10 pr-12 h-11 text-sm border-gray-300 focus-visible:ring-sky-500"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirmPassword((v) => !v)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-500 hover:text-gray-700"
+                  >
+                    {showConfirmPassword ? (
+                      <EyeOff className="w-5 h-5" />
+                    ) : (
+                      <Eye className="w-5 h-5" />
+                    )}
                   </button>
                 </div>
               </div>
@@ -211,9 +280,14 @@ export default function RegisterPage() {
               <Checkbox id="terms" />
               <Label htmlFor="terms" className="text-sm text-gray-600">
                 Acepto los{" "}
-                <a href="#" className="text-sky-500 hover:underline">términos y condiciones</a>{" "}
+                <a href="#" className="text-sky-500 hover:underline">
+                  términos y condiciones
+                </a>{" "}
                 y la{" "}
-                <a href="#" className="text-sky-500 hover:underline">política de privacidad</a>.
+                <a href="#" className="text-sky-500 hover:underline">
+                  política de privacidad
+                </a>
+                .
               </Label>
             </div>
           </CardContent>

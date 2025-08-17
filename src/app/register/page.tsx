@@ -276,17 +276,20 @@ export default function RegisterPage() {
             </div>
 
             {/* Checkbox */}
-            <div className="flex items-center space-x-2 pt-2">
+            <div className="flex items-start space-x-2 pt-2">
               <Checkbox id="terms" />
               <Label htmlFor="terms" className="text-sm text-gray-600">
                 Acepto los{" "}
-                <a href="#" className="text-sky-500 hover:underline">
+                <Link href="/terminos" className="text-sky-500 hover:underline">
                   términos y condiciones
-                </a>{" "}
+                </Link>{" "}
                 y la{" "}
-                <a href="#" className="text-sky-500 hover:underline">
+                <Link
+                  href="/politica-privacidad"
+                  className="text-sky-500 hover:underline"
+                >
                   política de privacidad
-                </a>
+                </Link>
                 .
               </Label>
             </div>

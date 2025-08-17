@@ -12,6 +12,7 @@ import {
   PawPrint,
   MoveRight,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Landing() {
   return (
@@ -42,19 +43,19 @@ export default function Landing() {
 
             {/* Botones */}
             <div className="mt-4 flex flex-col sm:flex-row gap-4 w-full">
-              <a
+              <Link
                 href="#servicios"
                 className="w-full sm:w-auto px-8 py-2.5 bg-sky-500 text-white rounded-lg shadow hover:bg-sky-600 transition flex items-center justify-center gap-2"
               >
                 Ver Servicios
                 <MoveRight className="w-4 h-4" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/login"
                 className="w-full sm:w-auto px-8 py-2.5 border border-sky-500 text-sky-500 rounded-lg hover:bg-sky-50 transition text-center"
               >
                 Portal de Clientes
-              </a>
+              </Link>
             </div>
 
             {/* Features abajo */}

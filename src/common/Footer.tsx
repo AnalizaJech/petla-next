@@ -1,21 +1,20 @@
 "use client";
 
-import { Dog } from "lucide-react";
+import { Dog, Instagram, Youtube, Music, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="bg-[#0d1b2a] text-gray-300 pt-12 pb-6 px-6 md:px-12 lg:px-20">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-        
         {/* Columna 1 - Logo y misión */}
         <div>
           <div className="flex items-center space-x-2 mb-4">
-            <Dog />
+            <Dog className="w-8 h-8 text-sky-500" />
             <span className="text-xl font-bold text-white">PetLA</span>
           </div>
           <p className="text-sm mb-4">
-            La plataforma veterinaria líder en Latinoamérica. Conectamos tecnología innovadora con el cuidado profesional que tu mascota merece.
+            Plataforma veterinaria líder en Latinoamérica, conectando tecnología innovadora con cuidado profesional para tu mascota.
           </p>
           <div className="bg-[#1b263b] p-4 rounded-md mb-6">
             <h3 className="font-semibold text-white flex items-center mb-2">
@@ -45,20 +44,20 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Contacto</h3>
           <div className="space-y-3 text-sm">
-            <p>
-              <span className="font-medium text-blue-400">+51 999 123 456</span><br />
-              Citas y consultas<br />
-              <span className="text-gray-400">Lun - Dom: 6AM - 10PM</span>
+            <p className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-blue-400" /> 
+              <span className="font-medium text-blue-400">+51 999 123 456</span>
+              <span className="text-gray-400 ml-1">Citas y consultas • Lun-Dom 6AM-10PM</span>
             </p>
-            <p>
-              <span className="font-medium text-orange-400">info@petla.com</span><br />
-              Consultas generales<br />
-              <span className="text-gray-400">Respuesta &lt; 2h</span>
+            <p className="flex items-center gap-2">
+              <Mail className="w-4 h-4 text-orange-400" />
+              <span className="font-medium text-orange-400">info@petla.com</span>
+              <span className="text-gray-400 ml-1">Consultas generales • Respuesta {"<"} 2h</span>
             </p>
-            <p>
-              <span className="font-medium text-green-400">Av. Principal 123</span><br />
-              Centro Médico Veterinario<br />
-              <span className="text-gray-400">Zona Centro • Fácil acceso</span>
+            <p className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-green-400" />
+              <span className="font-medium text-green-400">Av. Principal 123</span>
+              <span className="text-gray-400 ml-1">Centro Médico Veterinario • Fácil acceso</span>
             </p>
           </div>
 
@@ -69,7 +68,7 @@ export default function Footer() {
             </div>
             <div className="bg-[#3a1b1b] text-orange-300 p-3 rounded-md text-sm">
               <strong>🚨 Emergencias 24/7</strong><br />
-              Respuesta &lt; 5 minutos
+              Respuesta {"<"} 5 minutos
             </div>
           </div>
         </div>
@@ -77,14 +76,19 @@ export default function Footer() {
         {/* Columna 3 - Redes */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Síguenos en Redes</h3>
-          <p className="text-sm mb-4">
-            Únete a nuestra comunidad de amantes de las mascotas. Consejos diarios, historias inspiradoras y contenido educativo.
-          </p>
           <div className="flex flex-col space-y-2 text-sm">
-            <Link href="#" className="text-pink-400">📸 Instagram — Fotos diarias</Link>
-            <Link href="#" className="text-red-400">▶️ YouTube — Tutoriales</Link>
-            <Link href="#" className="text-white">🎵 TikTok — Videos virales</Link>
-            <Link href="#" className="text-blue-400">✖ X — Noticias</Link>
+            <Link href="https://instagram.com" target="_blank" className="flex items-center gap-2 text-pink-400 hover:underline">
+              <Instagram className="w-4 h-4" /> Instagram
+            </Link>
+            <Link href="https://youtube.com" target="_blank" className="flex items-center gap-2 text-red-400 hover:underline">
+              <Youtube className="w-4 h-4" /> YouTube
+            </Link>
+            <Link href="https://tiktok.com" target="_blank" className="flex items-center gap-2 text-white hover:underline">
+              <Music className="w-4 h-4" /> TikTok
+            </Link>
+            <Link href="https://twitter.com" target="_blank" className="flex items-center gap-2 text-blue-400 hover:underline">
+              <Twitter className="w-4 h-4" /> X
+            </Link>
           </div>
 
           <div className="bg-[#1b263b] p-4 rounded-md mt-6">
@@ -98,7 +102,12 @@ export default function Footer() {
 
       {/* Footer inferior */}
       <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-        <p>© 2024 PetLA. Todos los derechos reservados. | Privacidad | Términos | Cookies</p>
+        <p>
+          © 2024 PetLA. Todos los derechos reservados. |{" "}
+          <Link href="/privacidad" className="text-sky-400 hover:underline">Privacidad</Link> |{" "}
+          <Link href="/terminos" className="text-sky-400 hover:underline">Términos</Link> |{" "}
+          <Link href="/cookies" className="text-sky-400 hover:underline">Cookies</Link>
+        </p>
         <p className="mt-2 md:mt-0">Hecho con 🐾 para el bienestar animal</p>
       </div>
     </footer>

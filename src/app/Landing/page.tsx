@@ -41,17 +41,17 @@ export default function Landing() {
             </p>
 
             {/* Botones */}
-            <div className="mt-4 flex flex-wrap gap-4">
+            <div className="mt-4 flex flex-col sm:flex-row gap-4 w-full">
               <a
                 href="#servicios"
-                className="px-8 py-2.5 bg-sky-500 text-white rounded-lg shadow hover:bg-sky-600 transition flex items-center gap-2"
+                className="w-full sm:w-auto px-8 py-2.5 bg-sky-500 text-white rounded-lg shadow hover:bg-sky-600 transition flex items-center justify-center gap-2"
               >
                 Ver Servicios
                 <MoveRight className="w-4 h-4" />
               </a>
               <a
                 href="/login"
-                className="px-8 py-2.5 border border-sky-500 text-sky-500 rounded-lg hover:bg-sky-50 transition"
+                className="w-full sm:w-auto px-8 py-2.5 border border-sky-500 text-sky-500 rounded-lg hover:bg-sky-50 transition text-center"
               >
                 Portal de Clientes
               </a>
@@ -83,8 +83,9 @@ export default function Landing() {
               height={400}
               className="rounded-2xl shadow-lg"
             />
+
             {/* Tarjeta 1 */}
-            <div className="absolute top-6 left-6 bg-white shadow-lg rounded-lg px-4 py-2 flex items-center space-x-2">
+            <div className="hidden sm:flex absolute top-6 left-6 bg-white shadow-lg rounded-lg px-4 py-2 items-center space-x-2">
               <div className="w-10 h-10 flex items-center justify-center rounded-full bg-amber-100">
                 <Star className="w-5 h-5 text-amber-400" />
               </div>
@@ -96,7 +97,7 @@ export default function Landing() {
             </div>
 
             {/* Tarjeta 2 */}
-            <div className="absolute top-6 right-6 bg-white shadow-lg rounded-lg px-4 py-2 flex items-center space-x-2">
+            <div className="hidden sm:flex absolute top-6 right-6 bg-white shadow-lg rounded-lg px-4 py-2 items-center space-x-2">
               <div className="w-10 h-10 flex items-center justify-center rounded-full bg-indigo-100">
                 <CircleCheckBig className="w-5 h-5 text-indigo-500" />
               </div>
@@ -107,7 +108,7 @@ export default function Landing() {
               </span>
             </div>
 
-            {/* Tarjeta 3 */}
+            {/* Tarjeta 3 (Mascota Feliz, visible siempre) */}
             <div className="absolute bottom-6 left-6 bg-white shadow-lg rounded-lg px-4 py-2 flex items-center space-x-2">
               <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100">
                 <Stethoscope className="w-5 h-5 text-blue-500" />
@@ -119,7 +120,7 @@ export default function Landing() {
             </div>
 
             {/* Tarjeta 4 */}
-            <div className="absolute bottom-6 right-6 bg-white shadow-lg rounded-lg px-4 py-2 flex items-center space-x-2">
+            <div className="hidden sm:flex absolute bottom-6 right-6 bg-white shadow-lg rounded-lg px-4 py-2 items-center space-x-2">
               <div className="w-10 h-10 flex items-center justify-center rounded-full bg-green-100">
                 <Users className="w-5 h-5 text-green-500" />
               </div>
